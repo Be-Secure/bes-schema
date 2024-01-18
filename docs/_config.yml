@@ -1,0 +1,12 @@
+title: BeSecure Schema
+description: Information about the schema definitions for BeSecure community projects.
+theme: just-the-docs
+
+url: https://be-secure.github.io/bes-schema/
+
+
+aux_links:
+  "BeS-Schema on GitHub":
+    - https://github.com/Be-Secure/bes-schema
+
+logo: "/assets/Be-Secure-horizontal-grey.png"
