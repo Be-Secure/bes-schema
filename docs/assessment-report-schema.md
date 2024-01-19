@@ -37,7 +37,7 @@ The exact details of each field are elaborated in the next section. All strings
 contain UTF-8 text.
 
 A JSON Schema for validation is also available
-[here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema.json).
+[here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json).
 
 ```json
 {
@@ -45,7 +45,8 @@ A JSON Schema for validation is also available
     "asset": {
         "type": string,
         "name": string,
-        "url": string
+        "url": string,
+        "environment": string
     },
     "assessments": [
         {
@@ -53,20 +54,22 @@ A JSON Schema for validation is also available
                 "name": string,
                 "type": string,
                 "version": string,
-                "playbook": string
+                "playbook": string,
+                "detailedReport": string
             },
             "execution": {
                 "type": string,
                 "id": string,
                 "status": string,
                 "timestamp": timestamp,
-                "url": string
+                "timeTaken": string
             },
-            "result": [
+            "results": [
                 {
-                    "type": string,
+                    "feature": string,
+                    "aspect": string,
                     "attribute": string,
-                    "value": string
+                    "value": number
                 }
             ]
         }
@@ -99,7 +102,7 @@ versions of the schema only add new fields, without changing the meaning of old
 fields, so that a client that knows how to read version 1.2.0 can process data
 identifying as schema version 1.3.0 by ignoring any unexpected fields.
 
-## open source asset attributes
+## asset field
 
 ```json
 "asset": {
@@ -109,47 +112,7 @@ identifying as schema version 1.3.0 by ignoring any unexpected fields.
 }
 ```
 
-Description goes here
-
-
-## assessment tool attributes
-
-```json
-"tool": {
-    "name": string,
-    "type": string,
-    "version": string,
-    "playbook": string
-}
-```
-
-Description goes here
-
-## Assessment playbook execution attributes
-
-```json
-"execution": {
-    "type": string,
-    "id": string,
-    "status": string,
-    "timestamp": timestamp,
-    "url": string
-}
-```
-
-Description goes here
-
-## Assessment playbook execution attributes
-
-```json
-"result": [
-    {
-        "type": string,
-        "attribute": string,
-        "value": string
-    }
-]
-```
+Details about the open source asset that was assessed.
 
 <table>
   <thead>
@@ -160,18 +123,201 @@ Description goes here
   </thead>
   <tbody>
     <tr>
-      <td><code>A</code></td>
+      <td><code>type</code></td>
       <td>
-        Description goes here
+        Project / Model
       </td>
     </tr>
     <tr>
-      <td><code>A</code></td>
+      <td><code>name</code></td>
       <td>
-        Description goes here
+        Name of the project or model that was assessed
+      </td>
+    </tr>
+        <tr>
+      <td><code>url</code></td>
+      <td>
+        Project source code URL or the ML model card URL
       </td>
     </tr>
   </tbody>
 </table>
 
-Description goes here
+## assessments.tool field
+
+```json
+"tool": {
+    "name": string,
+    "type": string,
+    "version": string,
+    "playbook": string,
+    "detailedReport": string
+}
+```
+
+Details about the tool used for assessment. "assessments" is an array and it should contain all the assessments done on a particular asset. For instance, a typical open source assessment in Be-Secure comprises of SAST, Fuzzing, SCA, OpenSSF Criticality Score & ScoreCard and License compliance checks. All the assessments metadata should be contained in this array.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>
+        Name of the tool used for this assessment. For SAST type assessment CodeQL is an example tool name 
+      </td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        SAST / Fuzzing / License Compliance / Criticality Score / SBOM
+      </td>
+    </tr>
+    <tr>
+      <td><code>version</code></td>
+      <td>
+        Tool version
+      </td>
+    </tr>
+    <tr>
+      <td><code>playbook</code></td>
+      <td>
+        Assessment tool playbook name
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## assessments.execution field
+
+```json
+"execution": {
+    "type": string,
+    "id": string,
+    "status": string,
+    "timestamp": timestamp,
+    "timeTaken": string
+}
+```
+
+Assessment tool execution metadata. 
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        Is this assessment tool execution done by an Organization / Individual
+      </td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>
+        Organization Id or the Individual's id (It could be a GitHub id of the individual). An example for organization is Be-Secure
+      </td>
+    </tr>
+    <tr>
+      <td><code>status</code></td>
+      <td>
+        Success / Failure
+      </td>
+    </tr>
+    <tr>
+      <td><code>timestamp</code></td>
+      <td>
+        Date and time of assessment tool execution
+      </td>
+    </tr>
+    <tr>
+      <td><code>timeTaken</code></td>
+      <td>
+        Total time taken in seconds to complete the assessment tool execution
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## assessments.results array
+
+```json
+"results": [
+    {
+        "feature": string,
+        "aspect": string,
+        "attribute": string,
+        "value": number
+    }
+]
+```
+Summary of assessment tool execution results. Individual tool execution results should be translated to this format to accomodate the summary of result. 
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>feature</code></td>
+      <td>
+        Vulnerability / Code Smell / Criticality Score / ScoreCard / License Compliance / Dependency
+      </td>
+    </tr>
+    <tr>
+      <td><code>aspect</code></td>
+      <td>
+        Severity / Count / Score
+      </td>
+    </tr>
+    <tr>
+      <td><code>attribute</code></td>
+      <td>
+        Depends on the tool feature and the aspect. For instance, in SAST the aspect may be "Severity"and the attribute will be "Critical"
+      </td>
+    </tr>
+    <tr>
+      <td><code>value</code></td>
+      <td>
+        The summary count or value
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+For instance, a SAST tool execution result may give 10 vulnerability information and 50 code smells of various severity along with the file name and the exact line numbers. For this schema, the result summary should be abstracted as below.
+
+```json
+"results": [
+    {
+        "feature": "Vulnerability",
+        "aspect": "Severity",
+        "attribute": "Critical",
+        "value": 6
+    },
+    {
+        "feature": "Vulnerability",
+        "aspect": "Severity",
+        "attribute": "Medium",
+        "value": 4
+    },
+    {
+        "feature": "Code Smell",
+        "aspect": "Severity",
+        "attribute": "Low",
+        "value": 50
+    }
+]
+```
+

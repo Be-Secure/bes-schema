@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Vulnerabilities Of Interest
+title: Models Of Interest
 permalink: /models-of-interest/
 nav_order: 4
 ---
