@@ -1,19 +1,17 @@
 # BeS-Schema
 This repository defines the data exchage schema for various assets and its features in Be-Secure. 
 
-Key Be-Secure assets are ..
+Key Be-Secure eco system entities are ..
 - Open source projects of interest(OSSPoI)
 - Open source vulnerabilities of interest( OSSVoI)
 - Open source models of Interest (OSMoI)
-
-Key features of assets are ..
 - BeS Environments
 - BeS Playbooks
 - Open source Assessment Report (OSAR)
 - BeS Exploit & Attack Simuation (EAS)
 - BeSLabs
 
-# Schema Definitions
+# Schema Definitions for the BeS Eco system entities are:
 - Open Source Software Projects of Interest (OSSPoI)
 - Open Source Software Vulnerabilities of Interest (OSSVoI)
 - Open Source Models of Interest (OSMoI) 
