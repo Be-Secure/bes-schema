@@ -1,7 +1,8 @@
 # BeS-Schema
-This repository defines the data exchage schema for various assets and its features in Be-Secure. 
 
-Key Be-Secure eco system entities are ..
+This repository contains the data exchange schema for BeS . 
+
+BeS(Be-Secure) eco system entities are ..
 - Open source projects of interest(OSSPoI)
 - Open source vulnerabilities of interest( OSSVoI)
 - Open source models of Interest (OSMoI)
