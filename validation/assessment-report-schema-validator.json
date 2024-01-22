@@ -45,9 +45,6 @@
               },
               "playbook": {
                 "type": "string"
-              },
-              "detailedReport": {
-                "type": "string"
               }
             }
           },
@@ -68,7 +65,10 @@
               "timestamp": {
                 "$ref": "#/$defs/timestamp"
               },
-              "timeTaken": {
+              "duration": {
+                "type": "string"
+              },
+              "output_path": {
                 "type": "string"
               }
             }

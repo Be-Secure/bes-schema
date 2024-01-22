@@ -1,5 +1,5 @@
 # BeS-Schema
-This repository defines the data exchage schema for various assets and its features in Be-Secure. 
+This repository defines the data exchange schema for various assets and its features in Be-Secure. 
 
 Key Be-Secure assets are ..
 - Open source projects of interest(OSSPoI)
