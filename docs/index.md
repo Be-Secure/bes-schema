@@ -3,7 +3,7 @@ layout: home
 nav_order: 1
 ---
 
-### Be-Secure Schema Definitions
+# Be-Secure Schema Definitions
 
 An easy-to-use data format that maps precisely to various data exchange needs between cybersecurity analysts and security labs. These schema definitions address many of the shortcomings of dealing with vulnerabilities in open source software and ML models in Be-Secure ecosystem.
 

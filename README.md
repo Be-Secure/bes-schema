@@ -1,6 +1,6 @@
 # BeS-Schema
 
-This repository contains the data exchange schema definition for BeS . 
+This repository contains the data exchange schema definition for BeS. 
 
 BeS(Be-Secure) eco system entities are ..
 

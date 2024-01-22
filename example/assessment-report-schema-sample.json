@@ -1,0 +1,155 @@
+{
+  "schema_version": "0.1.0",
+  "asset": {
+    "type": "Project",
+    "name": "fastjson",
+    "url": "https://github.com/Be-Secure/fastjson",
+    "environment": "BeS Environment URL"
+  },
+  "assessments": [
+    {
+      "tool": {
+        "name": "CodeQL",
+        "type": "SAST",
+        "version": "1.0.0",
+        "playbook": "sast-codeql"
+      },
+      "execution": {
+        "type": "Organization",
+        "id": "O31E",
+        "status": "Success",
+        "timestamp": "2024-01-19T14:30:00",
+        "duration": "180s",
+        "output_path": "URL to the detailed report in datastore"
+      },
+      "results": [
+        {
+          "feature": "Vulnerability",
+          "aspect": "Severity",
+          "attribute": "Critical",
+          "value": 2
+        },
+        {
+          "feature": "Vulnerability",
+          "aspect": "Severity",
+          "attribute": "Medium",
+          "value": 10
+        },
+        {
+          "feature": "Vulnerability",
+          "aspect": "Severity",
+          "attribute": "Low",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "tool": {
+        "name": "spdx-sbom-generator",
+        "type": "sbom",
+        "version": "0.1.0",
+        "playbook": "sbom-spdx"
+      },
+      "execution": {
+        "type": "Organization",
+        "id": "O31E",
+        "status": "Success",
+        "timestamp": "2024-01-19T14:30:00",
+        "duration": "280s",
+        "output_path": "URL to the detailed report in datastore"
+      },
+      "results": [
+        {
+          "feature": "Dependency",
+          "aspect": "Count",
+          "attribute": "Not Applicable",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "tool": {
+        "name": "criticality-score",
+        "type": "Criticality",
+        "version": "0.1.0",
+        "playbook": "openssf-criticalityscore"
+      },
+      "execution": {
+        "type": "Organization",
+        "id": "O31E",
+        "status": "Success",
+        "timestamp": "2024-01-19T14:30:00",
+        "duration": "280s",
+        "output_path": "URL to the detailed report in datastore"
+      },
+      "result": [
+        {
+          "feature": "CriticalityScore",
+          "aspect": "Score",
+          "attribute": "Not Applicable",
+          "value": 0.34
+        }
+      ]
+    },
+    {
+      "tool": {
+        "name": "OpenSSF Scorecard",
+        "type": "Criticality",
+        "version": "0.1.0",
+        "playbook": "openssf-scorecard"
+      },
+      "execution": {
+        "type": "Organization",
+        "id": "O31E",
+        "status": "Success",
+        "timestamp": "2024-01-19T14:30:00",
+        "duration": "280s",
+        "output_path": "URL to the detailed report in datastore"
+      },
+      "result": [
+        {
+          "feature": "ScoreCard",
+          "aspect": "Overall Score",
+          "attribute": "Not Applicable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "tool": {
+        "name": "Fossology",
+        "type": "License Compliance",
+        "version": "0.1.0",
+        "playbook": "fossology"
+      },
+      "execution": {
+        "type": "Organization",
+        "id": "O31E",
+        "status": "Success",
+        "timestamp": "2024-01-19T14:30:00",
+        "duration": "280s",
+        "output_path": "URL to the detailed report in datastore"
+      },
+      "result": [
+        {
+          "feature": "Detected License",
+          "aspect": "License",
+          "attribute": "Apache 2.0",
+          "value": 3200
+        },
+        {
+          "feature": "Detected License",
+          "aspect": "License",
+          "attribute": "GPLv3",
+          "value": 8
+        },
+        {
+          "feature": "No License",
+          "aspect": "Not Applicable",
+          "attribute": "Not Applicable",
+          "value": 245
+        }
+      ]
+    }
+  ]
+}
