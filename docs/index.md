@@ -9,7 +9,7 @@ An easy-to-use data format that maps precisely to various data exchange needs be
 
 These unified format means that vulnerability databases, open source users, and security researchers can easily share tooling and consume vulnerabilities across all of open source. This means a more complete view of vulnerabilities in open source for everyone, as well as faster detection and remediation times resulting from easier automation.
 
-The schema definitions cater to below BeS ecosystem entities
+Be-Secure Eco System Entities are.
 - Open source projects of interest(OSSPoI)
 - Open source vulnerabilities of interest( OSSVoI)
 - Open source models of Interest (OSMoI)
@@ -19,7 +19,7 @@ The schema definitions cater to below BeS ecosystem entities
 - BeS Exploit & Attack Simuation (EAS)
 - BeSLabs
 
-## Schema Definitions
+# Schema Definitions for BeS Eco System entities.
 - Open Source Software Projects of Interest (OSSPoI)
 - Open Source Software Vulnerabilities of Interest (OSSVoI)
 - Open Source Models of Interest (OSMoI) 
