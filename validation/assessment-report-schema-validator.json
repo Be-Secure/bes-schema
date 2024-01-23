@@ -18,6 +18,9 @@
         "name": {
           "type": "string"
         },
+        "version": {
+          "type": "string"
+        },
         "url": {
           "type": "string"
         },
