@@ -40,7 +40,7 @@ A JSON Schema for validation is also available
 [here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json).
 
 A sample json for your understanding is available
-[here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json).
+[here](https://github.com/Be-Secure/bes-schema/blob/main/example/assessment-report-schema-sample.json).
 
 ```json
 {
@@ -48,6 +48,7 @@ A sample json for your understanding is available
     "asset": {
         "type": string,
         "name": string,
+        "version": string,
         "url": string,
         "environment": string
     },
@@ -111,6 +112,7 @@ identifying as schema version 1.3.0 by ignoring any unexpected fields.
 "asset": {
     "type": string,
     "name": string,
+    "version": string,
     "url": string
 }
 ```
@@ -137,7 +139,13 @@ Details about the open source asset that was assessed.
         Name of the project or model that was assessed
       </td>
     </tr>
-        <tr>
+    <tr>
+      <td><code>version</code></td>
+      <td>
+        Version of the project or model that was assessed
+      </td>
+    </tr>
+    <tr>
       <td><code>url</code></td>
       <td>
         Project source code URL or the ML model card URL
