@@ -3,8 +3,9 @@
   "asset": {
     "type": "Project",
     "name": "fastjson",
+    "version": "1.2.24",
     "url": "https://github.com/Be-Secure/fastjson",
-    "environment": "BeS Environment URL"
+    "environment": "https://github.com/Be-Secure/besecure-ce-env-repo/tree/master/fastjson/"
   },
   "assessments": [
     {
