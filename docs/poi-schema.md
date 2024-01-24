@@ -8,7 +8,7 @@ nav_order: 2
 
 # Open Source Software Projects of Interest (OSSPoI)
 
-**Version 0.1.0 (Jan 23, 2024)**
+**Version 0.2.0 (Jan 24, 2024)**
 
 Original authors:
 - Arun Suresh 
@@ -18,8 +18,7 @@ Original authors:
 This document defines a standard way of describing the essential information of each project under a Project of Interest(POI).
 This format is stable, but further backwards compatible changes may still be made.
 Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an
-[issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
 # Format Overview
 
@@ -35,29 +34,45 @@ A sample json for your understanding is available
 
 ```json
 {
-  "schema_version": "0.1.0",
-  "items": [
-    {
-      "bes_tracking_id": "NUMBER",
-      "issue_url": "STRING",
-      "name": "STRING",
-      "description": "STRING",
-      "bes_technology_stack": "STRING",
-      "created_at": "STRING",
-      "updated_at": "STRING",
-      "html_url": "STRING",
-      "homepage": "STRING",
-      "owner": {
-        "login": "STRING",
-        "type": "STRING"
-      },
-      "parent": "STRING",
-      "license": "STRING",
-      "language": { "STRING": "NUMBER" },
-      "tags": [
-        "STRING"
-      ]
-    }
+  "schema_version": "0.2.0",
+  "projects": [
+      {
+          "id": "NUMBER",
+          "name": "STRING",
+          "version_details": [
+              {
+                  "tag": "STRING",
+                  "release_date": "STRING"
+              }
+          ],
+          "issue_url": "STRING",
+          "description": "STRING",
+          "bes_technology_stack": "STRING",
+          "date_of_creation": "STRING",
+          "last_update": "STRING",
+          "forked_repo_url": "STRING",
+          "tavoss_repo_url": "STRING",
+          "homepage_url": "STRING",
+          "owner": {
+              "name": "STRING",
+              "type": "STRING"
+          },
+          "original_repo_url": "STRING",
+          "sub_projects": [
+              {
+                  "id": "STRING",
+                  "name": "STRING",
+                  "url": "STRING"
+              }
+          ],
+          "license": "STRING",
+          "languages": {
+              "STRING": "NUMBER"
+          },
+          "tags": [
+              "STRING"
+          ]
+      }
   ]
 }
 
@@ -86,27 +101,17 @@ identifying as schema version 1.3.0 by ignoring any unexpected fields.
 
 The data for this schema can be fetched from the api for the repository.
 
-## items.bes_tracking_id
+## projects.id
 
 ```json
 {
-  "bes_tracking_id": "STRING"
+  "id": "STRING"
 }
 ```
 
 The issue ID of the TAVOSS track request for the project raised under Be-Secure.
 
-## items.issue_url
-
-```json
-{
-  "issue_url": "STRING"
-}
-```
-
-URL to the TAVOSS track request under Be-Secure.
-
-## items.name
+## projects.name
 
 ```json
 {
@@ -116,7 +121,57 @@ URL to the TAVOSS track request under Be-Secure.
 
 Name of the OSS.
 
-## items.description
+## projects.version_details
+
+```json
+
+{
+  "version_details": [
+    {
+        "tag": "STRING",
+        "release_date": "STRING"
+    }
+  ]
+}
+
+```
+
+Contains the details of the tracked version.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>tag</code></td>
+      <td>
+       Version tag of the tracked project
+      </td>
+    </tr>
+    <tr>
+      <td><code>release_date</code></td>
+      <td>
+        The date of release of the tracked version.
+      </td>
+    </tr>
+  </tbody>
+</table>
+## projects.issue_url
+
+```json
+{
+  "issue_url": "STRING"
+}
+```
+
+URL to the TAVOSS track request under Be-Secure.
+
+
+## projects.description
 
 ```json
 {
@@ -126,7 +181,7 @@ Name of the OSS.
 
 A small description about the project.
 
-## items.bes_technology_stack
+## projects.bes_technology_stack
 
 ```json
 {
@@ -135,45 +190,56 @@ A small description about the project.
 ```
 The category under which the project belong.
 
-## items.created_at
+## projects.date_of_creation
 
 ```json
 {
-  "created_at": "STRING"
+  "date_of_creation": "STRING"
 }
 ```
 Date and time at which the project repo was created.
 
-## items.updated_at
+## projects.last_update
 
 ```json
 {
-  "updated_at": "STRING"
+  "last_update": "STRING"
 }
 ```
 
 Date and time of the last update.
 
-## items.html_url
+## projects.forked_repo_url
 
 ```json
 {
-  "html_url": "STRING"
+  "forked_repo_url": "STRING"
 }
 ```
 
 The url to the repository.
 
-## items.homepage
+## projects.tavoss_repo_url
+
+```json
+
+{
+  "tavoss_repo_url": "STRING",
+}
+```
+
+URL to the TAVOSS version of the project.
+
+## projects.homepage_url
 
 ```json
 {
-  "homepage": "STRING"
+  "homepage_url": "STRING"
 }
 ```
 URL to the webpage of the project.
 
-## items.owner
+## projects.owner
 
 ```json
 {
@@ -203,23 +269,66 @@ Details of the owner of the repo.
     <tr>
       <td><code>type</code></td>
       <td>
-        Organization/User
+        Organization/User/Lab
       </td>
     </tr>
   </tbody>
 </table>
 
-## items.parent
+## projects.original_repo_url
 
 ```json
 {
-  "parent": "STRING"
+  "original_repo_url": "STRING"
 }
 ```
 
 URL to the parent repo of the project.
 
-## items.license
+## projects.sub_projects
+
+```json
+"sub_projects": [
+    {
+        "id": "STRING",
+        "name": "STRING",
+        "url": "STRING"
+    }
+]
+```
+
+Contains the details of the tracked components of the project of interest.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>id</code></td>
+      <td>
+       Tracking id
+      </td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>
+        Name of the sub project
+      </td>
+    </tr>
+    <tr>
+      <td><code>url</code></td>
+      <td>
+        URL to the repo
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## projects.license
 
 ```json
 {

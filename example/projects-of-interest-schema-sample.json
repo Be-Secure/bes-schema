@@ -2,20 +2,28 @@
   "schema_version": "0.1.0",
   "items": [
     {
-      "bes_tracking_id": 472,
-      "issue_url": "https://github.com/Be-Secure/Be-Secure/issues/472",
+      "id": 472,
       "name": "opentofu",
+      "version_details": [
+        {
+          "tag": "v1.6.0-alpha5",
+          "release_date": "14-Nov-2023"
+        }
+      ],
+      "issue_url": "https://github.com/Be-Secure/Be-Secure/issues/472",
       "description": "Tool to building and managing cloud infrastructure as code securely and efficiently.",
       "bes_technology_stack": "DO",
-      "created_at": "2023-11-09T06:42:47Z",
-      "updated_at": "2023-11-22T10:13:15Z",
-      "html_url": "https://github.com/Be-Secure/opentofu",
-      "homepage": "https://opentofu.org",
+      "date_of_creation": "2023-11-09T06:42:47Z",
+      "last_update": "2023-11-22T10:13:15Z",
+      "forked_repo_url": "https://github.com/Be-Secure/opentofu",
+      "tavoss_repo_url": "",
+      "homepage_url": "https://opentofu.org",
       "owner": {
         "login": "Be-Secure",
         "type": "Organization"
       },
-      "parent": "https://github.com/opentofu/opentofu",
+      "original_repo_url": "https://github.com/opentofu/opentofu",
+      "sub_projects":[],
       "license": "MPL-2.0",
       "language": {
         "Go": 11187929,
