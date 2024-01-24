@@ -10,7 +10,8 @@ nav_order: 2
 
 **Version 0.1.0 (Jan 23, 2024)**
 
-
+Original authors:
+- Arun Suresh 
 
 # Purpose
 
@@ -27,10 +28,10 @@ The exact details of each field are elaborated in the next section. All 'STRING'
 contain UTF-8 text.
 
 <!-- A JSON Schema for validation is also available
-[here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json).
+[here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json). -->
 
 A sample json for your understanding is available
-[here](https://github.com/Be-Secure/bes-schema/blob/main/example/assessment-report-schema-sample.json). -->
+[here](../example/projects-of-interest-schema-sample.json).
 
 ```json
 {
@@ -40,52 +41,19 @@ A sample json for your understanding is available
       "bes_tracking_id": "NUMBER",
       "issue_url": "STRING",
       "name": "STRING",
-      "full_name": "STRING",
       "description": "STRING",
       "bes_technology_stack": "STRING",
       "created_at": "STRING",
       "updated_at": "STRING",
-      "pushed_at": "STRING",
       "html_url": "STRING",
       "homepage": "STRING",
       "owner": {
         "login": "STRING",
-        "id": "NUMBER",
         "type": "STRING"
       },
-      "project_repos": {
-        "main_github_url": "STRING",
-        "main_bes_url": "STRING",
-        "all_projects": [
-          {
-            "id": "NUMBER",
-            "name": "STRING",
-            "url": "STRING"
-          }
-        ],
-        "all_bes_repos": [
-          {
-            "id": "NUMBER",
-            "name": "STRING",
-            "url": "STRING"
-          }
-        ]
-      },
-      "license": {
-        "key": "STRING",
-        "name": "STRING",
-        "spdx_id": "STRING"
-      },
-      "language": {
-        "Go": "NUMBER",
-        "MDX": "NUMBER",
-        "HCL": "NUMBER",
-        "Shell": "NUMBER",
-        "Makefile": "NUMBER",
-        "PowerShell": "NUMBER",
-        "JavaScript": "NUMBER",
-        "Dockerfile": "NUMBER"
-      },
+      "parent": "STRING",
+      "license": "STRING",
+      "language": { "STRING": "NUMBER" },
       "tags": [
         "STRING"
       ]
@@ -115,3 +83,168 @@ matching version 1.0 of the schema. Clients can assume that new minor and patch
 versions of the schema only add new fields, without changing the meaning of old
 fields, so that a client that knows how to read version 1.2.0 can process data
 identifying as schema version 1.3.0 by ignoring any unexpected fields. 
+
+The data for this schema can be fetched from the api for the repository.
+
+## items.bes_tracking_id
+
+```json
+{
+  "bes_tracking_id": "STRING"
+}
+```
+
+The issue ID of the TAVOSS track request for the project raised under Be-Secure.
+
+## items.issue_url
+
+```json
+{
+  "issue_url": "STRING"
+}
+```
+
+URL to the TAVOSS track request under Be-Secure.
+
+## items.name
+
+```json
+{
+  "name": "STRING"
+}
+```
+
+Name of the OSS.
+
+## items.description
+
+```json
+{
+  "description": "STRING"
+}
+```
+
+A small description about the project.
+
+## items.bes_technology_stack
+
+```json
+{
+  "bes_technology_stack": "STRING"
+}
+```
+The category under which the project belong.
+
+## items.created_at
+
+```json
+{
+  "created_at": "STRING"
+}
+```
+Date and time at which the project repo was created.
+
+## items.updated_at
+
+```json
+{
+  "updated_at": "STRING"
+}
+```
+
+Date and time of the last update.
+
+## items.html_url
+
+```json
+{
+  "html_url": "STRING"
+}
+```
+
+The url to the repository.
+
+## items.homepage
+
+```json
+{
+  "homepage": "STRING"
+}
+```
+URL to the webpage of the project.
+
+## items.owner
+
+```json
+{
+  "owner": {
+        "login": "STRING",
+        "type": "STRING"
+      }
+}
+```
+
+Details of the owner of the repo.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>login</code></td>
+      <td>
+       Name of the owner of the repo
+      </td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        Organization/User
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## items.parent
+
+```json
+{
+  "parent": "STRING"
+}
+```
+
+URL to the parent repo of the project.
+
+## items.license
+
+```json
+{
+  "license": "STRING"
+}
+```
+
+This field contains the license of the project.
+
+## item.language
+
+```json
+{
+  "language": {"STRING": "NUMBER"}
+}
+```
+
+A dictionary containing the list of the languages used inside the project and their respective size.
+
+## item.tags
+
+```json
+{
+  "tags": ["STRING"]
+}
+```
+
+A list containing different tags assigned to the project. Mainly used for filtering in the UI.
