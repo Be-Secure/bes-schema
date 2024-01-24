@@ -1,0 +1,24 @@
+{
+    "schema_version": "0.2.0",
+    "models": [
+        {
+        "id": 15,
+        "issue_url": "",
+        "type": "LLM",
+        "name": "Falcon-180B",
+        "organization": "Be-Secure",
+        "description": "Falcon-180B is a 180B parameters causal decoder-only model built by TII and trained on 3,500B tokens of RefinedWeb enhanced with curated corpora.",
+        "created_date": "2023-09-06",
+        "model_url": "Not Available",
+        "data_url": "",
+        "label_url": "",
+        "modality": "text; text",
+        "size": "180B parameters (dense)",
+        "dependencies": ["RefinedWeb"],
+        "training_time": "9 months",
+        "quality_control": [],
+        "access": "open",
+        "license": "Apache 2.0"
+        }
+    ]
+}
