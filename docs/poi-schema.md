@@ -8,7 +8,7 @@ nav_order: 2
 
 # Open Source Software Projects of Interest (OSSPoI)
 
-**Version 0.2.0 (Jan 24, 2024)**
+**Version 0.2.0 (Jan 25, 2024)**
 
 Original authors:
 - Arun Suresh 

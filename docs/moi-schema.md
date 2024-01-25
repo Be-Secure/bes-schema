@@ -8,7 +8,7 @@ nav_order: 4
 
 # Open Source Models of Interest (OSMoI)
 
-**Version 0.2.0 (Jan 24, 2024)**
+**Version 0.2.0 (Jan 25, 2024)**
 
 Original authors:
 - Arun Suresh
@@ -23,6 +23,9 @@ is most welcome. Please feel free to create an [issue in this repo](https://gith
 The format is a JSON-based encoding format, using the following informal schema.
 The exact details of each field are elaborated in the next section. All 'STRING's
 contain UTF-8 text.
+
+A sample json for your understanding is available
+[here](../example/moi-report-schema-sample.json).
 
 ```json
 {
