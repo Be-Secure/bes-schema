@@ -4,7 +4,7 @@
     {
       "id": 472,
       "name": "opentofu",
-      "version_details": [
+      "version": [
         {
           "tag": "v1.6.0-alpha5",
           "release_date": "14-Nov-2023"

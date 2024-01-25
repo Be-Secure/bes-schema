@@ -39,7 +39,7 @@ A sample json for your understanding is available
       {
           "id": "NUMBER",
           "name": "STRING",
-          "version_details": [
+          "version": [
               {
                   "tag": "STRING",
                   "release_date": "STRING"
@@ -121,12 +121,12 @@ The issue ID of the TAVOSS track request for the project raised under Be-Secure.
 
 Name of the OSS.
 
-## projects.version_details
+## projects.version
 
 ```json
 
 {
-  "version_details": [
+  "version": [
     {
         "tag": "STRING",
         "release_date": "STRING"
