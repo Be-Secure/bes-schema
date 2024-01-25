@@ -8,7 +8,7 @@ nav_order: 4
 
 # Open Source Models of Interest (OSMoI)
 
-**Version 0.2.0 (Jan 25, 2024)**
+**Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
 - Arun Suresh
@@ -29,7 +29,7 @@ A sample json for your understanding is available
 
 ```json
 {
-    "schema_version": "0.2.0",
+    "schema_version": "0.1.0",
     "models": [
         {
             "id": "NUMBER",
