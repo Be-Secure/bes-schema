@@ -33,18 +33,26 @@ contain UTF-8 text.
             "issue_url": "STRING",
             "type": "STRING",
             "name": "STRING",
-            "organization": "STRING",
             "description": "STRING",
             "created_date": "STRING",
             "model_url": "STRING",
-            "data_url": "STRING",
+            "dataset_url": "STRING",
             "label_url": "STRING",
-            "modality": "STRING; STRING",
+            "parent": {
+              "name": "STRING",
+              "type": "STRING",
+              "url": "STRING"
+            },
+            "owner": {
+              "name": "STRING",
+              "type": "STRING"
+            },
+            "modality": {
+                "input_type": "STRING",
+                "output_type": "STRING"
+            },
             "size": "STRING",
             "dependencies": ["STRING"],
-            "training_time": "STRING",
-            "quality_control": ["STRING"],
-            "access": "STRING",
             "license": "STRING",
         }
     ]
@@ -53,7 +61,7 @@ contain UTF-8 text.
 
 # Field Details
 
-## id
+## models.id
 
 ```json
 {
@@ -63,7 +71,7 @@ contain UTF-8 text.
 
 The field contains the tracking id of the model under BeS.
 
-## issue_url
+## models.issue_url
 
 ```json
 {
@@ -73,7 +81,7 @@ The field contains the tracking id of the model under BeS.
 
 The url to the track reequest raised.
 
-## type
+## models.type
 
 ```json
 {
@@ -83,7 +91,7 @@ The url to the track reequest raised.
 
 The type of the model - Classic or LLM.
 
-## name
+## models.name
 
 ```json
 {
@@ -93,17 +101,7 @@ The type of the model - Classic or LLM.
 
 Name of the model.
 
-## organization
-
-```json
-{
-    "organization": "STRING"
-}
-```
-
-The name of the organisation that developed and published the model.
-
-## description
+## models.description
 
 ```json
 {
@@ -113,7 +111,7 @@ The name of the organisation that developed and published the model.
 
 Description of the model.
 
-## created_date
+## models.created_date
 
 ```json
 {
@@ -121,9 +119,9 @@ Description of the model.
 }
 ```
 
-The date at which the model was created.
+The date at which the model was added to moi.
 
-## model_url
+## models.model_url
 
 ```json
 {
@@ -133,17 +131,17 @@ The date at which the model was created.
 
 The url to the model binary.
 
-## data_url
+## models.dataset_url
 
 ```json
 {
-    "data_url": "STRING"
+    "dataset_url": "STRING"
 }
 ```
 
-The url to the data that is used to train the model.
+The url to the dataset that is used to train the model.
 
-## label_url
+## models.label_url
 
 ```json
 {
@@ -153,17 +151,94 @@ The url to the data that is used to train the model.
 
 The url to the labels of the dataset used for training.
 
-## modality
+## projects.parent
 
 ```json
 {
-    "modality": "STRING"
+  "parent": {
+            "name": "STRING",
+            "type": "STRING",
+        }
+}
+```
+
+The details of the parent organization of the model are given here.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>
+       Name of the parent of the model
+      </td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        Organization/User/Lab
+      </td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+
+## models.owner
+
+```json
+{
+  "owner": {
+        "name": "STRING",
+        "type": "STRING"
+      }
+}
+```
+
+Details of the current owner of the model.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>
+       Name of the owner of the model
+      </td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        Organization/User/Lab
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+## models.modality
+
+```json
+{
+    "modality": {
+        "input_type": "STRING",
+        "output_type": "STRING"
+    }
 }
 ```
 
 The field contains the type of the model input and type of the model output.
 
-## size
+## models.size
 
 ```json
 {
@@ -173,7 +248,7 @@ The field contains the type of the model input and type of the model output.
 
 The size of the trainable weights.
 
-## dependencies
+## models.dependencies
 
 ```json
 {
@@ -181,36 +256,6 @@ The size of the trainable weights.
 }
 ```
 The list of dependencies of the model.
-
-## training_time
-
-```json
-{
-    "training_time": "STRING"
-}
-```
-
-The time it took for the model to complete training.
-
-## quality_control
-
-```json
-{
-    "quality_control": ["STRING"]
-}
-```
-
-List of quality controls done on the model - assessments/fuzz test.
-
-## access
-
-```json
-{
-    "access": "STRING"
-}
-```
-
-Whether the model accessibility is open/close.
 
 ## license
 

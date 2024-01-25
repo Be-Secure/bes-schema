@@ -12,12 +12,21 @@
         "model_url": "Not Available",
         "data_url": "",
         "label_url": "",
-        "modality": "text; text",
+        "parent": {
+            "name": "UAE Technology Innovation Institute",
+            "type": "Organization",
+            "url": "Not Available"
+          },
+          "owner": {
+            "name": "Be-Secure",
+            "type": "Organization"
+          },
+          "modality": {
+              "input_type": "text",
+              "output_type": "text"
+          },
         "size": "180B parameters (dense)",
         "dependencies": ["RefinedWeb"],
-        "training_time": "9 months",
-        "quality_control": [],
-        "access": "open",
         "license": "Apache 2.0"
         }
     ]
