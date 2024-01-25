@@ -154,7 +154,7 @@ The url to the dataset that is used to train the model.
 
 The url to the labels of the dataset used for training.
 
-## projects.parent
+## models.parent
 
 ```json
 {
