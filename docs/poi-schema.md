@@ -163,6 +163,7 @@ Contains the details of the tracked version.
     </tr>
   </tbody>
 </table>
+
 ## projects.issue_url
 
 ```json
@@ -275,7 +276,6 @@ The details of the parent organization of the repo are given here.
         Organization/User/Lab
       </td>
     </tr>
-    <tr>
   </tbody>
 </table>
 
