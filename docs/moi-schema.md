@@ -187,7 +187,6 @@ The details of the parent organization of the model are given here.
         Organization/User/Lab
       </td>
     </tr>
-    <tr>
   </tbody>
 </table>
 
@@ -226,7 +225,6 @@ Details of the current owner of the model.
     </tr>
   </tbody>
 </table>
-
 
 ## models.modality
 
