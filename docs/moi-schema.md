@@ -8,7 +8,7 @@ nav_order: 4
 
 # Open Source Models of Interest (OSMoI)
 
-**Version 0.2.0 (Jan 25, 2024)**
+**Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
 - Arun Suresh
@@ -29,7 +29,7 @@ A sample json for your understanding is available
 
 ```json
 {
-    "schema_version": "0.2.0",
+    "schema_version": "0.1.0",
     "models": [
         {
             "id": "NUMBER",
@@ -154,7 +154,7 @@ The url to the dataset that is used to train the model.
 
 The url to the labels of the dataset used for training.
 
-## projects.parent
+## models.parent
 
 ```json
 {
@@ -187,7 +187,6 @@ The details of the parent organization of the model are given here.
         Organization/User/Lab
       </td>
     </tr>
-    <tr>
   </tbody>
 </table>
 
@@ -226,7 +225,6 @@ Details of the current owner of the model.
     </tr>
   </tbody>
 </table>
-
 
 ## models.modality
 
