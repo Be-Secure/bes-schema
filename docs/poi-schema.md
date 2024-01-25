@@ -48,21 +48,24 @@ A sample json for your understanding is available
           "issue_url": "STRING",
           "description": "STRING",
           "bes_technology_stack": "STRING",
-          "date_of_creation": "STRING",
-          "last_update": "STRING",
+          "onboard_date": "STRING",
+          "last_update_date": "STRING",
           "forked_repo_url": "STRING",
           "tavoss_repo_url": "STRING",
           "homepage_url": "STRING",
+          "parent": {
+              "name": "STRING",
+              "type": "STRING",
+              "url": "STRING"
+          },
           "owner": {
               "name": "STRING",
               "type": "STRING"
           },
-          "original_repo_url": "STRING",
           "sub_projects": [
               {
                   "id": "STRING",
-                  "name": "STRING",
-                  "url": "STRING"
+                  "name": "STRING"
               }
           ],
           "license": "STRING",
@@ -190,20 +193,20 @@ A small description about the project.
 ```
 The category under which the project belong.
 
-## projects.date_of_creation
+## projects.onboard_date
 
 ```json
 {
-  "date_of_creation": "STRING"
+  "onboard_date": "STRING"
 }
 ```
 Date and time at which the project repo was created.
 
-## projects.last_update
+## projects.last_update_date
 
 ```json
 {
-  "last_update": "STRING"
+  "last_update_date": "STRING"
 }
 ```
 
@@ -239,12 +242,49 @@ URL to the TAVOSS version of the project.
 ```
 URL to the webpage of the project.
 
+## projects.parent
+
+```json
+{
+  "parent": {
+            "name": "STRING",
+            "type": "STRING",
+        }
+}
+```
+
+The details of the parent organization of the repo are given here.
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>
+       Name of the parent of the repo
+      </td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>
+        Organization/User/Lab
+      </td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+
 ## projects.owner
 
 ```json
 {
   "owner": {
-        "login": "STRING",
+        "name": "STRING",
         "type": "STRING"
       }
 }
@@ -261,7 +301,7 @@ Details of the owner of the repo.
   </thead>
   <tbody>
     <tr>
-      <td><code>login</code></td>
+      <td><code>name</code></td>
       <td>
        Name of the owner of the repo
       </td>
@@ -274,16 +314,6 @@ Details of the owner of the repo.
     </tr>
   </tbody>
 </table>
-
-## projects.original_repo_url
-
-```json
-{
-  "original_repo_url": "STRING"
-}
-```
-
-URL to the parent repo of the project.
 
 ## projects.sub_projects
 
