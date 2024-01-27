@@ -11,11 +11,13 @@ nav_order: 2
 **Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
-- Arun Suresh 
+- Vinod Panicker (@panickervinod)
+- Harimohan Rajamohanan (@harimohanr)
+- Arun Suresh (@ )
 
 # Purpose
 
-This document defines a standard way of describing the essential information of each project under a Project of Interest(POI).
+This document defines an format for interchange of open source software projects  of Interest (OSSPOI) for an organisation . An organization powered by BeSLab shall publish their OSSPoI
 This format is stable, but further backwards compatible changes may still be made.
 Feedback from maintainers of other vulnerability databases and security response teams
 is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
