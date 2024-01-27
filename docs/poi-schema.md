@@ -17,7 +17,7 @@ Original authors:
 
 # Purpose
 
-This document defines the format for interchange of open source software projects  of Interest (OSSPOI) for an organisation . An organization powered by BeSLab shall publish their OSSPoI to its peers as well the community dashboard BeSLighthouse.
+This document defines the data interchange format for open source software projects  of Interest (OSSPOI) for any goven organisation . An organization powered by BeSLab shall publish their OSSPoI to its peers as well the community dashboard BeSLighthouse.
 This format is stable, but further backwards compatible changes may still be made.
 Feedback from maintainers of other vulnerability databases and security response teams
 is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
