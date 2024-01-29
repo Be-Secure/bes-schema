@@ -1,0 +1,25 @@
+{
+    "schema_version": "0.1.0",
+    "name": "besman-codeql-playbook",
+    "version": "0.1.0",
+    "type": "assessment",
+    "owner": {
+        "name": "Be-Secure",
+        "type": "Organization"
+    },
+    "date_of_creation": "29-Jan-2023",
+    "last_updated_date": "29-Jan-2023",
+    "last_execution": {
+        "name": "Be-Secure",
+        "type": "Organization",
+        "status": "success",
+        "timestamp": "2024-01-29 14:18:46"
+    },
+    "detailed_report_path": "https://github.com/Be-Secure/besecure-assessment-datastore",
+    "compatible_envs": [
+        "besman-fastjson-RT-env",
+        "besman-fastjson-BT-env",
+        "besman-jacksonDatabind-RT-env",
+        "besman-jacksonDatabind-BT-env"
+    ]
+}
