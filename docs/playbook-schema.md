@@ -7,7 +7,7 @@ nav_order: 8
 
 # BeS Playbook Info & Status
 
-**Version 0.1.0 (Jan 25, 2024)**
+**Version 0.1.0 (Jan 30, 2024)**
 
 Original authors:
 - Vinod Panicker (@panickervinod)
