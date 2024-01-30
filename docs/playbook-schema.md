@@ -36,29 +36,33 @@ contain UTF-8 text.
 ```json
 {
     "schema_version": "STRING",
-    "name": "STRING",
-    "version": "STRING",
-    "type": "STRING",
-    "owner": {
+    "playbooks":[
+      {
+      "name": "STRING",
+      "version": "STRING",
+      "type": "STRING",
+      "owner": {
         "name": "STRING",
-        "type": "STRING"
-    },
-    "date_of_creation": "STRING",
-    "last_update_date": "STRING",
-    "last_execution": {
+          "type": "STRING"
+      },
+      "date_of_creation": "STRING",
+      "last_update_date": "STRING",
+      "last_execution": {
         "name": "STRING",
-        "type": "STRING",
-        "status": "STRING",
-        "timestamp": "STRING"
-    },
-    "detailed_report_path": "STRING",
-    "compatible_envs": ["STRING"]
+          "type": "STRING",
+          "status": "STRING",
+          "timestamp": "STRING"
+      },
+      "detailed_report_path": "STRING",
+      "compatible_envs": ["STRING"]
+    }
+  ]
 }
 ```
 
 # Field Details
 
-## schema_version
+## playbooks.schema_version
 
 ```json
 {
@@ -77,7 +81,7 @@ versions of the schema only add new fields, without changing the meaning of old
 fields, so that a client that knows how to read version 1.2.0 can process data
 identifying as schema version 1.3.0 by ignoring any unexpected fields.
 
-## name
+## playbooks.name
 
 ```json
 {
@@ -87,7 +91,7 @@ identifying as schema version 1.3.0 by ignoring any unexpected fields.
 
 The name of the playbook.
 
-## version
+## playbooks.version
 
 ```json
 {
@@ -97,7 +101,7 @@ The name of the playbook.
 
 Version of the playbook.
 
-## type
+## playbooks.type
 
 ```json
 {
@@ -107,7 +111,7 @@ Version of the playbook.
 
 The type of the playbook - `assessment` or `exploit`.
 
-## owner
+## playbooks.owner
 
 ```json
 "owner": {
@@ -137,7 +141,7 @@ The details of the author of the playbook goes here.
   </tbody>
 </table>
 
-## date_of_creation
+## playbooks.date_of_creation
 
 ```json
 {
@@ -147,7 +151,7 @@ The details of the author of the playbook goes here.
 
 The date of the creation of playbook.
 
-## last_updated_date
+## playbooks.last_updated_date
 
 ```json
 {
@@ -157,7 +161,7 @@ The date of the creation of playbook.
 
 The date of last updation of the playbook.
 
-## last_execution
+## playbooks.last_execution
 
 ```json
 "last_execution": {
@@ -197,7 +201,7 @@ Details of the last playbook execution is given here.
   </tbody>
 </table>
 
-## detailed_report_path
+## playbooks.detailed_report_path
 
 ```json
 {
@@ -207,7 +211,7 @@ Details of the last playbook execution is given here.
 
 The path to the detailed report of the tools execution is given here.
 
-## compatible_envs
+## playbooks.compatible_envs
 
 ```json
 "compatible_envs": [
