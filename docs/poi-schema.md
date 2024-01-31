@@ -28,6 +28,8 @@ The format is a JSON-based encoding format, using the following informal schema.
 The exact details of each field are elaborated in the next section. All 'STRING's
 contain UTF-8 text.
 
+The data for this schema can be fetched from the api for the repository.
+
 <!-- A JSON Schema for validation is also available
 [here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json). -->
 
@@ -104,7 +106,6 @@ versions of the schema only add new fields, without changing the meaning of old
 fields, so that a client that knows how to read version 1.2.0 can process data
 identifying as schema version 1.3.0 by ignoring any unexpected fields. 
 
-The data for this schema can be fetched from the api for the repository.
 
 ## projects.id
 

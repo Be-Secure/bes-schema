@@ -1,0 +1,24 @@
+{
+    "schema_version": "0.0.1",
+    "environments":[
+        {
+            "name": "besman-fastjson-RT-env",
+            "version": {
+                "tag": "0.0.1",
+                "release_date": "NA"
+            },
+            "owner": {
+                "name": "Be-Secure",
+                "type": "organization"
+            },
+            "date_of_creation": "Jul 14, 2022 ",
+            "last_update_date": "Nov 4, 2022",
+            "last_execution": {
+                "name": "asa1997",
+                "type": "user",
+                "status": "success",
+                "timestamp": "2024-01-30T13:46:10Z"
+            }
+        }
+    ]
+}
