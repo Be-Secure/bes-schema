@@ -17,7 +17,7 @@ Original authors:
 
 # Purpose
 
-This document defines the data interchange format for open source software projects  of Interest (OSSPOI) for any goven organisation . An organization powered by BeSLab shall publish their OSSPoI to its peers as well the community dashboard BeSLighthouse.
+This document defines the data interchange format for open source software projects  of Interest (OSSPOI) for any given organisation . An organization powered by BeSLab shall publish their OSSPoI to its peers as well the community dashboard BeSLighthouse.
 This format is stable, but further backwards compatible changes may still be made.
 Feedback from maintainers of other vulnerability databases and security response teams
 is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
@@ -28,11 +28,13 @@ The format is a JSON-based encoding format, using the following informal schema.
 The exact details of each field are elaborated in the next section. All 'STRING's
 contain UTF-8 text.
 
+The data for this schema can be fetched from the api for the repository.
+
 <!-- A JSON Schema for validation is also available
 [here](https://github.com/Be-Secure/bes-schema/blob/main/validation/assessment-report-schema-validator.json). -->
 
 A sample json for your understanding is available
-[here](../example/projects-of-interest-schema-sample.json).
+[here](https://be-secure.github.io/bes-schema/example/projects-of-interest-schema-sample.json).
 
 ```json
 {
@@ -104,7 +106,6 @@ versions of the schema only add new fields, without changing the meaning of old
 fields, so that a client that knows how to read version 1.2.0 can process data
 identifying as schema version 1.3.0 by ignoring any unexpected fields. 
 
-The data for this schema can be fetched from the api for the repository.
 
 ## projects.id
 
