@@ -30,11 +30,8 @@ contain UTF-8 text.
 ```json
 {
   "schema_version": "STRING",
+  "id": "STRING",
   "name": "STRING",
-  "version": {
-    "tag": "STRING",
-    "release_date": "STRING"
-  },
   "description": "STRING",
   "owner":{
     "name": "STRING",
@@ -43,6 +40,23 @@ contain UTF-8 text.
   "date_of_creation": "STRING",
   "modified_date": "STRING",
   "size": "STRING",
+  "poi": "NUMBER",
+  "voi": "NUMBER",
+  "moi": "NUMBER",
+  "tools":[
+    {
+      "type": "STRING",
+      "name": "STRING",
+      "version": "STRING"
+    }
+  ],
+  "datastore": [
+    {
+      "type": "STRING",
+      "scope": "STRING",
+      "path": "STRING"
+    }
+  ],
   "instances": [
     {
         "id": "STRING",
@@ -54,6 +68,7 @@ contain UTF-8 text.
 
 }
 ```
+
 # Field Details
 
 ## schema_version field

@@ -13,14 +13,16 @@ nav_order: 2
 Original authors:
 - Vinod Panicker (@panickervinod)
 - Harimohan Rajamohanan (@harimohanr)
-- Arun Suresh (@asa1997 )
+- Arun Suresh (@asa1997)
+- Sudhir Verma(@sudhirverma)
 
 # Purpose
 
-This document defines the data interchange format for open source software projects  of Interest (OSSPOI) for any given organisation . An organization powered by BeSLab shall publish their OSSPoI to its peers as well the community dashboard BeSLighthouse.
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+This document outlines a standardized data interchange format for open source software projects of interest (OSSPoI) within organizations. The OSSPoI encompasses essential project details such as project **id**, project **name**, **version** specifics, **owner** information, **onboarded_date**, and **last_update_date**. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source projects can be onbaorded into BeSLab by BLIman utility.
+
+This standardized data interchange format not only streamlines the sharing and publication process of open source software projects within organizations but also significantly reduces the time required for BeSLabs to assess projects of interest. By providing a structured framework for exchanging essential project details, BeSLabs can expedite their assessment procedures and evaluation of open source projects.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
 # Format Overview
 
@@ -52,7 +54,7 @@ A sample json for your understanding is available
           "issue_url": "STRING",
           "description": "STRING",
           "bes_technology_stack": "STRING",
-          "onboard_date": "STRING",
+          "onboarded_date": "STRING",
           "last_update_date": "STRING",
           "forked_repo_url": "STRING",
           "tavoss_repo_url": "STRING",
@@ -197,14 +199,14 @@ A small description about the project.
 ```
 The category under which the project belong.
 
-## projects.onboard_date
+## projects.onboarded_date
 
 ```json
 {
-  "onboard_date": "STRING"
+  "onboarded_date": "STRING"
 }
 ```
-Date and time at which the project repo was created.
+Date and time at which the project was onboarded.
 
 ## projects.last_update_date
 
