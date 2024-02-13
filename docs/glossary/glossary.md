@@ -25,3 +25,10 @@ A collection of vulnerabilities that affects the OSSPoI. These vulnerabilities c
 
 A dashboard project for visulaizing the security assessment and risk posture of open source projects and ML models tracked by a BeSLAB deployment.
 
+## BeS Environments
+
+An automated script which helps a security professional with setting up security environments for vulnerability assessments and patching.
+
+## BeS Playbook
+
+An automated script defining the steps for security related activities such as vulnerability assessments, exploit simulation etc.
