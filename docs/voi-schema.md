@@ -16,11 +16,11 @@ Original authors:
 
 # Purpose
 
-This document defines the data interchange format for open source vulnerabilities of interest (VOI) for any given organisation . An organization powered by BeSLab shall publish their OSSVoI to its peers as well the community dashboard BeSLighthouse.
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+This document outlines a standardized data interchange format for open source software vulnerabilities of interest (OSSVoI) within organizations. The OSSVoI encompasses essential vulnerability details such as vulnerability **id**, vulnerability **summary**, **severity**, **cwe** id. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source vulnerabilities can be onbaorded into BeSLab by BLIman utility. The OSSVoI can also be mapped to OSSPoI
 
+This standardized data interchange format not only streamlines the sharing and publication process of open source software vulnerabilities within organizations but also significantly reduces the time required for BeSLabs to assess vulnerabilities of interest. By providing a structured framework for exchanging essential vulnerability details, BeSLabs can expedite their patching process.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 # Format Overview
 
 The format is a JSON-based encoding format, using the following informal schema.
@@ -38,7 +38,9 @@ contain UTF-8 text.
       "aliases": [
         "STRING"
       ],
-      "cwe": "STRING",
+      "cwe": [
+        "STRING"
+      ],
       "published_date": "STRING",
       "modified_date": "STRING",
       "fix_available": "STRING",
@@ -146,11 +148,13 @@ Aliases should not be used in records that bundle many different vulnerabilities
 
 ```json
 {
-  "cwe": "STRING"
+  "cwe": [ 
+    "STRING"
+  ]
 }
 ```
 
-The `cwe` field indicates the CWE id that corresponds to the vulnerability’s category. It follows the format `CWE-<number>` as a string.
+The `cwe` field indicates the CWE ids that are mapped to the vulnerability. It follows the format `CWE-<number>` as a string.
 
 ### vulnerabilities.published_date
 
