@@ -2,7 +2,7 @@
 layout: page
 title: Glossary
 permalink: /glossary/
-nav_order: 10
+nav_order: 11
 ---
 
 ## Open Source Software Projects of Interest(OSSPoI)
