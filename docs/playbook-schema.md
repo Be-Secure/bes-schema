@@ -10,16 +10,34 @@ nav_order: 8
 **Version 0.1.0 (Jan 30, 2024)**
 
 Original authors:
-- Vinod Panicker (@panickervinod)
-- Harimohan Rajamohanan (@harimohanr)
-- Arun Suresh (@asa1997 )
+
+- Vinod Panicker ([@panickervinod](https://github.com/panickervinod))
+- Harimohan Rajamohanan ([@harimohanr](https://github.com/harimohanr))
+- Arun Suresh ([@asa1997](https://github.com/asa1997))
+- Sudhir Verma([@sudhirverma](https://github.com/sudhirverma))
 
 # Purpose
 
-This document defines the data interchange format for playbooks for any given organisation. An organization powered by BeSLab shall publish their playbooks to its peers as well the community dashboard BeSLighthouse. The data in this scehma can be used by other tools under the organization.
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+<!-- This document outlines a standardized data interchange format for open source software playbooks of interest (OSSPloI) within organizations. The OSSPloI encompasses essential playbook details such as playbook **name**, **version** specifics,**type** information, **author** information, **last_execution** details, **detailed report path** and a list of **compatible environments**. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source playbooks can be onbaorded into BeSLab by BLIman utility.
+
+This standardized data interchange format not only streamlines the sharing and publication process of open source software playbooks within organizations but also significantly reduces the time required for BeSLabs to assess projects of interest. These playbooks help in automating the steps required for assessment activities as well as expediting the time required for it. -->
+
+This document introduces a standardized data interchange format specifically designed for open source software playbooks within organizations. The OSSPloI captures crucial details related to these playbooks, including:
+
+- Playbook Name
+- Version Specifics
+- Type Information
+- Author Details
+- Last Execution Information
+- Detailed Report Path
+- List of Compatible Environments
+
+These comprehensive details facilitate seamless sharing among peers within the organization and enable publication to the BeSLighthouse community dashboard. By leveraging the BLIman utility, organizations can effortlessly onboard their Open Source playbooks into BeSLab.
+
+The adoption of this standardized format not only streamlines the sharing and publication process of open source software playbooks but also significantly reduces the time required for BeSLabs to assess projects of interest. These playbooks play a pivotal role in automating assessment activities and expediting the overall assessment timeline.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+
 
 # Format Overview
 
@@ -41,7 +59,7 @@ contain UTF-8 text.
       "name": "STRING",
       "version": "STRING",
       "type": "STRING",
-      "owner": {
+      "author": {
         "name": "STRING",
           "type": "STRING"
       },
@@ -111,10 +129,10 @@ Version of the playbook.
 
 The type of the playbook - `assessment` or `exploit`.
 
-## playbooks.owner
+## playbooks.author
 
 ```json
-"owner": {
+"author": {
   "type": "STRING",
   "name": "STRING"
 }

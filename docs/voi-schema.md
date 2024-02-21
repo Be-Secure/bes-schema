@@ -10,9 +10,11 @@ nav_order: 3
 **Version 0.1.0 (Jan 30, 2024)**
 
 Original authors:
-- Vinod Panicker (@panickervinod)
-- Harimohan Rajamohanan (@harimohanr)
-- Arun Suresh (@asa1997 )
+
+- Vinod Panicker ([@panickervinod](https://github.com/panickervinod))
+- Harimohan Rajamohanan ([@harimohanr](https://github.com/harimohanr))
+- Arun Suresh ([@asa1997](https://github.com/asa1997))
+- Sudhir Verma([@sudhirverma](https://github.com/sudhirverma))
 
 # Purpose
 
