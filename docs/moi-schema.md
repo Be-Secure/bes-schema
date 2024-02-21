@@ -11,12 +11,19 @@ nav_order: 4
 **Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
-- Arun Suresh
 
-This document defines a standard way of describing the essential information of each model under the Models of Interest(MOI).
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+- Vinod Panicker ([@panickervinod](https://github.com/panickervinod))
+- Harimohan Rajamohanan ([@harimohanr](https://github.com/harimohanr))
+- Arun Suresh ([@asa1997](https://github.com/asa1997))
+- Sudhir Verma([@sudhirverma](https://github.com/sudhirverma))
+
+# Purpose
+
+This document outlines a standardized data interchange format for open source software models of interest (OSSMoI) within organizations. The OSSMoI encompasses essential model details such as model **id**, model **name**, model **type**, **owner** information, **parent** information, **modality** information, **size** information. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source models can be onbaorded into BeSLab by BLIman utility.
+
+This standardized data interchange format not only streamlines the sharing and publication process of open source software models within organizations but also significantly reduces the time required for BeSLabs to assess models of interest. By providing a structured framework for exchanging essential model details, BeSLabs can expedite their assessment procedures and evaluation of open source models.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
 # Format Overview
 

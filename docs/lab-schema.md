@@ -10,16 +10,19 @@ nav_order: 9
 **Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
-- Vinod Panicker (@panickervinod)
-- Harimohan Rajamohanan (@harimohanr)
-- Arun Suresh (@asa1997 )
+
+- Vinod Panicker ([@panickervinod](https://github.com/panickervinod))
+- Harimohan Rajamohanan ([@harimohanr](https://github.com/harimohanr))
+- Arun Suresh ([@asa1997](https://github.com/asa1997))
+- Sudhir Verma([@sudhirverma](https://github.com/sudhirverma))
 
 # Purpose
 
-This document gives you information on open source security lab dedicated to fortifying open source projects against potential vulnerabilities for any given organisation.
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+This document provides an overview of BeSLab, covering essential details related to the lab. These include the **id**, **name**, **version** specifics, **owner** information, **date_of_creation** as well as **size**, **poi** (projects of interest) count, **moi** (models of interest) count and **voi** (vulnerabilities of interest) count.  Additionally, the document outlines the various **tools** hosted within the lab.
+
+BeSLab is a dynamic environment where Open Source **projects**, **tools**, **vulnerabilities**, and **models** can be seamlessly integrated using the BLIman utility. This utility also facilitates the creation and launch of the lab.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
 # Format Overview
 
