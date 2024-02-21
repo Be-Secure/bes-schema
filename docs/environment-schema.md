@@ -10,17 +10,19 @@ nav_order: 7
 **Version 0.1.0 (Jan 25, 2024)**
 
 Original authors:
-- Vinod Panicker (@panickervinod)
-- Harimohan Rajamohanan (@harimohanr)
-- Arun Suresh (@asa1997)
-- Sudhir Verma(@sudhirverma)
+
+- Vinod Panicker ([@panickervinod](https://github.com/panickervinod))
+- Harimohan Rajamohanan ([@harimohanr](https://github.com/harimohanr))
+- Arun Suresh ([@asa1997](https://github.com/asa1997))
+- Sudhir Verma([@sudhirverma](https://github.com/sudhirverma))
 
 # Purpose
 
-This document defines the data interchange format for environments for any given organisation. An organization powered by BeSLab shall publish their environments to its peers as well the community dashboard BeSLighthouse. The data in this scehma can be used by other tools under the organization.
-This format is stable, but further backwards compatible changes may still be made.
-Feedback from maintainers of other vulnerability databases and security response teams
-is most welcome. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+This document outlines a standardized data interchange format for open source software environments of interest (OSSEoI) within organizations. The environments are used to set up an environment for OSSPoI which would contain all the necessary tools and utilities for a security analyst to start working on it. The OSSEoI encompasses essential project environment details such as environment **name**, **version** specifics, **author** information, **date_of_creation**, **last_update_date** and **last_execution** details. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source project environments can be onbaorded into BeSLab by BLIman utility. These environments can be installed using a utility called BeSman.
+
+This standardized data interchange format not only streamlines the sharing and publication process of open source software project environments within organizations but also significantly reduces the time required for BeSLabs to set up the projects. By providing a structured framework for exchanging essential project details, BeSLabs can expedite their assessment procedures and evaluation of open source projects.
+
+This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
 # Format Overview
 
@@ -44,7 +46,7 @@ contain UTF-8 text.
           "tag": "STRING",
           "release_date": "STRING"
         },
-        "owner": {
+        "author": {
             "name": "STRING",
             "type": "STRING"
         },
@@ -109,18 +111,18 @@ The `version` field is a dictionary with two properties,
 - `tag`: Gives you the tag of the release.
 - `release_date`: Gives you the date of the releae of the env script.
 
-### environments.owner
+### environments.author
 
 ```json
 {
-  "owner": {
+  "author": {
       "name": "STRING",
       "type": "STRING"
   }
 }
 ```
 
-The `owner` field is a dictionary which gives you the owner of the env script.
+The `author` field is a dictionary which gives you the author of the env script.
 - The `name` property gives you the name of the entity.
 - The `type` property gives you whether the entity is a `user` or `organization` or `lab`.
 
