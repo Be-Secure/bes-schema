@@ -18,11 +18,51 @@ Original authors:
 
 # Purpose
 
-This document outlines a standardized data interchange format for open source software environments of interest (OSSEoI) within organizations. The environments are used to set up an environment for OSSPoI which would contain all the necessary tools and utilities for a security analyst to start working on it. The OSSEoI encompasses essential project environment details such as environment **name**, **version** specifics, **author** information, **date_of_creation**, **last_update_date** and **last_execution** details. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source project environments can be onbaorded into BeSLab by BLIman utility. These environments can be installed using a utility called BeSman.
+This document outlines a standardized data interchange format for open source software environments of interest (OSSEoI) within organizations. The environments are used to set up an environment for OSSPoI which would contain all the necessary tools and utilities for a security analyst to start working on it. The OSSEoI encompasses essential project environment details such as environment **name**, **version** specifics, **author** information, **date_of_creation**, **last_update_date**, **last_execution** details as well as details of **compatible playbooks**. These details facilitate seamless sharing among peers within the organization and publication to the BeSLighthouse community dashboard. Open Source project environments can be onbaorded into BeSLab by BLIman utility. These environments can be installed using a utility called BeSman.
 
 This standardized data interchange format not only streamlines the sharing and publication process of open source software project environments within organizations but also significantly reduces the time required for BeSLabs to set up the projects. By providing a structured framework for exchanging essential project details, BeSLabs can expedite their assessment procedures and evaluation of open source projects.
 
 This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
+
+# Example environment
+
+```json
+{
+  "schema_version": "0.0.1",
+  "environments":[
+    {
+        "name": "fastjson-RT-env",
+        "version": {
+          "tag": "0.0.1",
+          "release_date": "2024-05-27T09:27:34"
+        },
+        "author": {
+            "name": "BeSLab",
+            "type": "Lab"
+        },
+        "date_of_creation": "2024-05-25T09:27:34",
+        "last_update_date": "2024-05-25T09:27:34",
+        "last_execution": {
+            "name": "BeSLab",
+            "type": "Lab",
+            "status": "Success",
+            "timestamp": "2024-05-25T09:27:34"
+        },
+        "compatible_playbooks": [
+          {
+            "name": "scorecard",
+            "version": ["0.0.1"]
+          },
+          {
+            "name": "criticality_score",
+            "version": ["0.0.1"]
+          },
+        ]
+    }
+  ]
+}
+```
+
 
 # Format Overview
 
@@ -57,7 +97,13 @@ contain UTF-8 text.
             "type": "STRING",
             "status": "STRING",
             "timestamp": "STRING"
-        }
+        },
+        "compatible_playbooks": [
+          {
+            "name": "STRING",
+            "version": ["STRING"]
+          }
+        ]
     }
   ]
 }
@@ -157,3 +203,20 @@ The `last_execution` field gives you the details of the last execution of the en
 - The `type` property gives you whether the entity is a `lab` or `user` or `organization`
 - The `status` property gives you the status of the execution. It accepts the following values - `success` or `failed`.
 - The `timestamp` property gives you the time of last execution as an RFC3339-formatted timestamp. 
+
+### environments.compatible_playbooks
+
+```json
+"compatible_playbooks": [
+  {
+    "name": "STRING",
+    "version": ["STRING"]
+  }
+]
+
+The `compatible_playbooks` field gives you the list of playbooks than can be executed inside this environment.
+
+- The `name` property gives you the name of the playbook.
+- The `version` is a list of compatible versions of the playbook.
+
+```
