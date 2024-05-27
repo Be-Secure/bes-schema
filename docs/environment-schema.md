@@ -24,7 +24,7 @@ This standardized data interchange format not only streamlines the sharing and p
 
 This format is stable, but further backwards compatible changes may still be made. Please feel free to create an [issue in this repo](https://github.com/Be-Secure/bes-schema/issues/new).
 
-# Example playbook
+# Example environment
 
 ```json
 {
