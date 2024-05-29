@@ -50,7 +50,10 @@ A sample json for your understanding is available
         "name": string,
         "version": string,
         "url": string,
-        "environment": string
+        "environment": {
+          "name": string,
+          "version": string
+        }
     },
     "assessments": [
         {
@@ -58,7 +61,10 @@ A sample json for your understanding is available
                 "name": string,
                 "type": string,
                 "version": string,
-                "playbook": string
+                "playbook": {
+                  "name": string,
+                  "version": string
+                }
             },
             "execution": {
                 "type": string,
@@ -113,7 +119,11 @@ identifying as schema version 1.3.0 by ignoring any unexpected fields.
     "type": string,
     "name": string,
     "version": string,
-    "url": string
+    "url": string,
+    "environment": {
+      "name": string,
+      "version": string
+    }
 }
 ```
 
@@ -151,6 +161,18 @@ Details about the open source asset that was assessed.
         Project source code URL or the ML model card URL
       </td>
     </tr>
+    <tr>
+      <td><code>environment.name</code></td>
+      <td>
+        Name of the environment used.
+      </td>
+    </tr>
+    <tr>
+      <td><code>environment.version</code></td>
+      <td>
+        Version of the environment used.
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -161,7 +183,10 @@ Details about the open source asset that was assessed.
     "name": string,
     "type": string,
     "version": string,
-    "playbook": string
+    "playbook": {
+      "name": string,
+      "version": string
+    }
 }
 ```
 
@@ -194,9 +219,15 @@ Details about the tool used for assessment. "assessments" is an array and it sho
       </td>
     </tr>
     <tr>
-      <td><code>playbook</code></td>
+      <td><code>playbook.name</code></td>
       <td>
         Assessment tool playbook name
+      </td>
+    </tr>
+    <tr>
+      <td><code>playbook.version</code></td>
+      <td>
+        Assessment tool playbook version
       </td>
     </tr>
   </tbody>
